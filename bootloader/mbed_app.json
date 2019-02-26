@@ -1,0 +1,77 @@
+{
+    "macros": [
+        "MBEDTLS_USER_CONFIG_FILE=\"bootloader_mbedtls_user_config.h\"",
+        "SHOW_PROGRESS_BAR=1",
+        "MAX_COPY_RETRIES=1",
+        "MAX_BOOT_RETRIES=3",
+        "ARM_BOOTLOADER_USE_NVSTORE_ROT=1",
+
+        "ARM_UC_USE_PAL_BLOCKDEVICE=1",
+        "ARM_UC_PAAL_TRACE_ENABLE=0",
+        "ARM_UC_PROFILE_MBED_CLOUD_CLIENT=1",
+        "ARM_UC_FEATURE_CRYPTO_PAL=0",
+        "ARM_UC_FEATURE_CRYPTO_MBEDTLS=1",
+        
+        "DEFAULT_MAX_APPLICATION_SIZE=(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - MBED_CONF_APP_APPLICATION_START_ADDRESS)",
+        "DISABLE_ERROR_DESCRIPTION=1",
+        "Mutex=PlatformMutex",
+        "ARM_UC_ALL_TRACE_ENABLE=0"
+    ],
+    "config": {
+        "application-start-address": {
+            "help": "Address to the beginning of the active application firmware in flash",
+            "value": null
+        },
+        "application-jump-address": {
+            "help": "Jump address for running the active application firmware",
+            "value": null
+        },
+        "max-application-size": {
+            "help": "Maximum size of the active application",
+            "value": null
+        },
+        "flash-start-address": {
+            "help": "Start address of internal flash. Only used in this config to help the definition of other macros.",
+            "value": null
+        },
+        "flash-size": {
+            "help": "Total size of internal flash. Only used in this config to help the definition of other macros.",
+            "value": null
+        }
+    },
+    "target_overrides": {
+        "*": {
+            "target.features_remove"           : ["LWIP"],
+            "target.features_add"              : ["COMMON_PAL"],
+            "target.extra_labels_remove"       : ["PSA"],
+            "target.components_remove"         : ["FLASHIAP"],
+            "platform.stdio-baud-rate"         : 115200,
+            "platform.stdio-flush-at-exit"     : false,
+            "update-client.storage-address"    : "(1024*1024*64)",
+            "update-client.storage-size"       : "(1024*1024*2)",
+            "update-client.storage-locations"  : 1,
+            "update-client.firmware-header-version": "2"
+        },
+        "MTB_STM_L475": {
+            "target.components_add"            : ["SPIF"],
+            "flash-start-address"              : "0x08000000",
+            "flash-size"                       : "(1024*1024)",
+            "nvstore.area_1_address"           : "(MBED_CONF_APP_FLASH_START_ADDRESS + 1016*1024)",
+            "nvstore.area_1_size"              : "(4*1024)",
+            "nvstore.area_2_address"           : "(MBED_CONF_APP_FLASH_START_ADDRESS + 1020*1024)",
+            "nvstore.area_2_size"              : "(4*1024)",
+            "update-client.application-details": "(MBED_CONF_APP_FLASH_START_ADDRESS + 64*1024)",
+            "update-client.storage-address"    : "(1024*1024*3)",
+            "update-client.storage-size"       : "(1024*1024*1)",
+            "update-client.storage-locations"  : 1,
+            "update-client.storage-page"       : 1,
+            "application-start-address"        : "(MBED_CONF_APP_FLASH_START_ADDRESS + 65*1024)",
+            "max-application-size"             : "DEFAULT_MAX_APPLICATION_SIZE",
+            "spif-driver.SPI_FREQ"             : 1000000,
+            "spif-driver.SPI_MOSI"             : "PB_5",
+            "spif-driver.SPI_MISO"             : "PA_6",
+            "spif-driver.SPI_CLK"              : "PA_5",
+            "spif-driver.SPI_CS"               : "PD_2"
+        }
+    }
+}

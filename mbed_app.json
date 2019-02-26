@@ -1,0 +1,126 @@
+{
+    "macros": [
+        "ARM_UC_USE_PAL_BLOCKDEVICE=1",
+        "MBED_CLOUD_CLIENT_UPDATE_STORAGE=ARM_UCP_FLASHIAP_BLOCKDEVICE",
+        "MBED_CLIENT_USER_CONFIG_FILE=\"mbed_cloud_client_user_config.h\"",
+        "MBED_CLOUD_CLIENT_USER_CONFIG_FILE=\"mbed_cloud_client_user_config.h\"",
+        "PAL_USER_DEFINED_CONFIGURATION=\"sotp_fs_config_MbedOS.h\"",
+        "PAL_FS_MOUNT_POINT_PRIMARY=\"/fs\"",
+        "MBEDTLS_USER_CONFIG_FILE=\"mbedTLSConfig_mbedOS.h\"",
+        "PAL_DTLS_PEER_MIN_TIMEOUT=5000"
+    ],
+    "target_overrides": {
+        "*": {
+            "platform.stdio-baud-rate"          : 115200,
+            "platform.default-serial-baud-rate" : 115200,
+            "platform.stdio-convert-newlines"   : true,
+            "platform.stdio-buffered-serial"    : false,
+            "mbed-trace.enable"                 : false,
+            "lwip.ipv4-enabled"                 : true,
+            "lwip.ethernet-enabled"             : false,
+            "lwip.ppp-enabled"                  : false,
+            "lwip.tcp-enabled"                  : true,
+            "cellular.debug-at"                 : false,
+            "nanostack-hal.event_loop_thread_stack_size" : 5120,
+            "mbed-client.event-loop-size"       : 1024,
+            "mbed-client.sn-coap-duplication-max-msgs-count": 1
+        },
+        "MTB_STM_L475": {
+            "target.network-default-interface-type": "CELLULAR",
+            "target.macros_add"                    : ["CELLULAR_DEVICE=QUECTEL_BG96", "MDMTXD=PA_2", "MDMRXD=PA_3", "MDMRTS=PA_1", "MDMCTS=PA_0"],
+
+            "target.features_add"                  : ["BOOTLOADER"],
+            "target.bootloader_img"                : "bootloader/mbed-bootloader-extended.bin",
+
+
+            "target.header_offset"                 : "0x10000",
+            "target.app_offset"                    : "0x10400",
+
+            "nsapi.default-cellular-sim-pin"       : "\"1111\"",
+            "nsapi.default-cellular-apn"           : "\"everywhere\"",
+            "nsapi.default-cellular-username"      : "\"eesecure\"",
+            "nsapi.default-cellular-password"      : "\"secure\"",
+            "cellular.use-apn-lookup"              : false,
+
+            "mbed-client.sn-coap-duplication-max-msgs-count": 1,
+
+            "client_app.partition_mode"            : 0,
+            "client_app.primary_partition_size"    : "(1024*1024)",
+
+            "target.components_add"                : ["SPIF"],
+            "spif-driver.SPI_FREQ"                 : 1000000,
+            "spif-driver.SPI_MOSI"                 : "PB_5",
+            "spif-driver.SPI_MISO"                 : "PA_6",
+            "spif-driver.SPI_CLK"                  : "PA_5",
+            "spif-driver.SPI_CS"                   : "PD_2",
+
+            "flash-start-address"                  : "0x08000000",
+            "flash-size"                           : "(1024*1024)",
+            "sotp-section-1-address"               : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 2*(4*1024))",
+            "sotp-section-1-size"                  : "(4*1024)",
+            "sotp-section-2-address"               : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 1*(4*1024))",
+            "sotp-section-2-size"                  : "(4*1024)",
+            "sotp-num-sections"                    : 2,
+
+            "update-client.application-details"    : "(MBED_CONF_APP_FLASH_START_ADDRESS + 64*1024)",
+            "update-client.storage-address"        : "(1024*1024*3)",
+            "update-client.storage-size"           : "(1024*1024*1)",
+            "update-client.storage-locations"      : "1"
+        }
+    },
+    "config": {
+        "format-storage-layer-on-error": {
+            "help": "Whether to format the storage layer when it cannot be read - always disable for production devices!",
+            "value": 1
+        },
+        "developer-mode": {
+            "help": "Enable Developer mode to skip Factory enrollment",
+            "value": 1
+        },
+        "main-stack-size": {
+            "value": 6000
+        },
+        "flash-start-address": {
+            "help": "Start address of internal flash. Only used in this config to help the definition of other macros.",
+            "value": null
+        },
+        "flash-size": {
+            "help": "Total size of internal flash. Only used in this config to help the definition of other macros.",
+            "value": null
+        },
+        "sotp-section-1-address": {
+            "help": "Flash sector address for SOTP sector 1",
+            "macro_name": "PAL_INTERNAL_FLASH_SECTION_1_ADDRESS",
+            "value": null
+        },
+        "sotp-section-1-size": {
+            "help": "Flash sector size for SOTP sector 1",
+            "macro_name": "PAL_INTERNAL_FLASH_SECTION_1_SIZE",
+            "value": null
+        },
+        "sotp-section-2-address": {
+            "help": "Flash sector address for SOTP sector 2",
+            "macro_name": "PAL_INTERNAL_FLASH_SECTION_2_ADDRESS",
+            "value": null
+        },
+        "sotp-section-2-size": {
+            "help": "Flash sector size for SOTP sector 2",
+            "macro_name": "PAL_INTERNAL_FLASH_SECTION_2_SIZE",
+            "value": null
+        },
+        "sotp-num-sections": {
+            "help": "Number of SOTP sections",
+            "macro_name": "PAL_INT_FLASH_NUM_SECTIONS",
+            "value": null
+        },
+        "sock-type": "TCP",
+        "radio-access-technology": {
+            "help": "Radio access technology to use. Value in integer: GSM=0, GSM_COMPACT=1, UTRAN=2, EGPRS=3, HSDPA=4, HSUPA=5, HSDPA_HSUPA=6, E_UTRAN=7, CATM1=8 ,NB1=9",
+            "value": 6
+        },
+        "tls-debug":{
+            "macro_name": "PAL_TLS_DEBUG_THRESHOLD",
+            "value": null
+        }
+    }
+}

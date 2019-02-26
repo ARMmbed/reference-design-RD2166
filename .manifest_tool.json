@@ -1,0 +1,13 @@
+{
+    "classId": "a6f36e63-33b2-5518-a5bc-f5ebee1ba9e0", 
+    "default-certificates": [
+        {
+            "file": ".update-certificates\\default.der"
+        }
+    ], 
+    "deviceURNs": [], 
+    "modelName": "BG96_L475_ashok", 
+    "private-key": ".update-certificates\\default.key.pem", 
+    "vendorDomain": "arm.com", 
+    "vendorId": "fa6b4a53-d5ad-5fdf-be9d-e663e4d41ffe"
+}

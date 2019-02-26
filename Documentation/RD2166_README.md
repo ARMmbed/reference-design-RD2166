@@ -43,7 +43,9 @@ Note: references to Mbed Cloud and Pelion Device Managament are interchangeable.
 
 And 
 
-    ```
+
+```
+
     "MTB_STM_L475": {  
     "flash-start-address"              : "0x08000000",  
     "flash-size"                       : "(1024*1024)",  
@@ -54,8 +56,10 @@ And
     "update-client.application-details": "(MBED_CONF_APP_FLASH_START_ADDRESS+64*1024)",  
     "application-start-address"        : "(MBED_CONF_APP_FLASH_START_ADDRESS+65*1024)",  
     "max-application-size"             : "DEFAULT_MAX_APPLICATION_SIZE",   
-    }  
-   ```
+    }
+
+    ```
+
 
 6. Change mbed_app.json in source:
  ```   "update-client.storage-address"  : "(1024*1024*64)",  ```

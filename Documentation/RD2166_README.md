@@ -4,7 +4,7 @@ This Reference Application is targetted specifically at the RD2166 Reference Des
 
 The current version of the Reference Application uses: Mbed OS v5.11.5 and Mbed Cloud Client v2.0.1.1
 
-Note: references to Mbed Cloud and Pelion Device Managament are interchangeable.  For example: ìMbed Cloud Client enables the device to communicate with Pelion Device Managementî and ìMbed Cloud Client enables the device to communicate with Mbed Cloudî have the same meaning.  In later versions we will remove references to Mbed Cloud inline with branding guidelines.
+Note: references to Mbed Cloud and Pelion Device Managament are interchangeable.  For example: ‚ÄúMbed Cloud Client enables the device to communicate with Pelion Device Management‚Äù and ‚ÄúMbed Cloud Client enables the device to communicate with Mbed Cloud‚Äù have the same meaning.  In later versions we will remove references to Mbed Cloud inline with branding guidelines.
 
 # Pre-requisites:
 1. Hardware:
@@ -37,15 +37,13 @@ Note: references to Mbed Cloud and Pelion Device Managament are interchangeable.
     * Change the default storage component in targets/targets.json file of Mbed OS.
     * Modify mbed_app.json in bootloader: Change update storage-address and remove SPI pin defines.  
     
-    ```
+```
     "update-client.storage-address"  : "(1024*1024*64)",  
-    ```
-
-And 
-
-
 ```
 
+And
+
+    ```
     "MTB_STM_L475": {  
     "flash-start-address"              : "0x08000000",  
     "flash-size"                       : "(1024*1024)",  
@@ -57,10 +55,7 @@ And
     "application-start-address"        : "(MBED_CONF_APP_FLASH_START_ADDRESS+65*1024)",  
     "max-application-size"             : "DEFAULT_MAX_APPLICATION_SIZE",   
     }
-
-    ```
-
-
+     ```
 6. Change mbed_app.json in source:
  ```   "update-client.storage-address"  : "(1024*1024*64)",  ```
    

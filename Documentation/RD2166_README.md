@@ -56,6 +56,7 @@ And
     "max-application-size"             : "DEFAULT_MAX_APPLICATION_SIZE",   
     }  
    ```
+
 6. Change mbed_app.json in source:
  ```   "update-client.storage-address"  : "(1024*1024*64)",  ```
    

@@ -11,6 +11,15 @@ Note: references to Mbed Cloud and Pelion Device Managament are interchangeable.
     * RD2166 based board or platform (the application was developed and tested using the Example Implemenation Hardware - MCB/MTB
     * A micro USB cable
     * A SIM card from your network provider with SIM details available for SIM PIN, APN, SIM username and SIM password.
+    * For development purposes of this reference design, an EE network SIM card was used in the UK with the following parameters:
+
+    ```
+            "nsapi.default-cellular-sim-pin"       : "\"1234\"",
+            "nsapi.default-cellular-apn"           : "\"everywhere\"",
+            "nsapi.default-cellular-username"      : "\"myusername\"",
+            "nsapi.default-cellular-password"      : "\"mypassword\"",
+            "cellular.use-apn-lookup"              : false,
+    ```
 
 2. Software:
     * mbed CLI - https://github.com/ARMmbed/mbed-cli

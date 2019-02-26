@@ -34,26 +34,16 @@ Note: references to Mbed Cloud and Pelion Device Managament are interchangeable.
    
 5. To build the bootloader to use the SD card:  (TIP: You may want to use atleast a Class 10, 2GB SD card.) This application currently uses v3.5.0 of the mbed-bootloader.
     * Import the bootloader repo - https://github.com/ARMmbed/mbed-bootloader
-    * Change /source/main.cpp in the bootloader with:
-    ```
-        #if MBED_CLOUD_CLIENT_UPDATE_STORAGE == ARM_UCP_FLASHIAP_BLOCKDEVICE
-        #include "SDBlockDevice.h"  
-        /* initialise sd card blockdevice */  
-        #if defined(MBED_CONF_APP_SPI_MOSI) && defined(MBED_CONF_APP_SPI_MISO) && \  
-   defined(MBED_CONF_APP_SPI_CLK)  && defined(MBED_CONF_APP_SPI_CS)  
-   SDBlockDevice sd(MBED_CONF_APP_SPI_MOSI, MBED_CONF_APP_SPI_MISO,  
-   MBED_CONF_APP_SPI_CLK,  MBED_CONF_APP_SPI_CS);  
-   ```
-
+    * Change the default storage component in targets/targets.json file of Mbed OS.
     * Modify mbed_app.json in bootloader: Change update storage-address and remove SPI pin defines.  
     
     ```
     "update-client.storage-address"  : "(1024*1024*64)",  
-```
+    ```
 
 And 
 
-```
+    ```
     "MTB_STM_L475": {  
     "flash-start-address"              : "0x08000000",  
     "flash-size"                       : "(1024*1024)",  
@@ -243,7 +233,6 @@ Simulated button clicked 11 times
 Simulated button clicked 12 times
 Simulated button clicked 13 times
 Simulated button clicked 14 times
-
 ```
 
 #### Also note that the device ID remains the same after the FW update. This indicates that the SOTP regions were not over-written while perfoming the update.

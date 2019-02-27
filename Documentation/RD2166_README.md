@@ -245,3 +245,20 @@ Simulated button clicked 14 times
 ```
 
 #### Also note that the device ID remains the same after the FW update. This indicates that the SOTP regions were not over-written while perfoming the update.
+
+#### Troubleshooting and FAQs:
+1. Flow control on the MODEM: It is highly advisable to have dedicated hardware flow control pins between the MCU to the MODEM. This is required to enable cellular AT debug messages during development. If hwfc is not used, the packets received from the network are just too fast that may cause data corruption resulting in un-expected failures of Pelion Client.
+
+2. SPI frequency: In this reference design, the SPI frequency for the SPI Flash is slowed down to 1MHz althought the MCU can handle upto 40MHz. This is becuase the XTAL used on the Module Carrier Board is an 8MHz resonator. Other higher frequencies are definitely supported by the SPI-flash driver in Mbed OS and will need appropriate modifications in the OS (system_clock.c) to match the frequencies used.
+
+TIP: You can also use the MSI clock on the L475 series of MCUs to make use of higher frequencies for the SPI Flash if you prefer to use higher clocks.
+
+3. Cellular access technology: The reference design uses High Speed Uplink/Downlink Packet Access technology. This is configurable in the mbed_app.json file in the root of the RD2166 under "radio-access-technology" parameter. Depending on your network, SIM card and your network provider's capabilities in your region, you can use any of the listed technologies to connect to the network.
+
+4. TLS debug: There is a macro already provided in the RD2166's mbed_app.json to enable TLS debug messages if you need them. You can enable this by adding ```tls-debug:1``` under the "target_overrides" section. You can have values from 1-4 where 1 is the least amount of debug info and 4 is the max.
+
+5. Mbed trace: If you need to enable debug messages, please toggle the "mbed-trace-enable" parameter in the mbed_app.json.
+
+6. Currently, the BG96 driver in Mbed OS supports only AT mode. Hence "lwip.ppp-enabled" is "false".
+
+7. Bootloader: The bootloader repository used to generate the bootloader binary in this RD is the https://github.com/ARMmbed/mbed-bootloader-extended . If any changes are required to the bootloader, please use this repository.

@@ -1,6 +1,6 @@
 # RD2166 Introduction:
 
-The RD2166 Reference Design is a Pelion Ready design based on the Quectel BG96 cellular module and an ST Microcontroller (STM32L475).
+The RD2166 Reference Design is a Pelion Ready design based on the Quectel BG96 cellular module and the STM32L475 Microcontroller.
 
 The reference design is a tested and proven starting point targetted towards the creation of both Development Boards and End Products.
 

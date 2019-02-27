@@ -18,7 +18,7 @@ Based on the Reference Design, this example implementation is included to demons
 
 *MCB (Module Carrier Board)* - this has been designed using the Reference Design schematic. In this reference design, the MCB is a standalone STM32L475 MCU.
 
-*MEB (Modulude Expansion Board)* - this has been designed using the Reference Design schematic. In this reference design, the MEB is a Quectel BG96 module.
+*MEB (Module Expansion Board)* - this has been designed using the Reference Design schematic. In this reference design, the MEB is a Quectel BG96 module.
 
 *MTB (Module Test Bed)* - this is part of the test infrastructure, and includes DAPLink circuit for programming the device, a range of I/O and loopback paths for automated testing.
  

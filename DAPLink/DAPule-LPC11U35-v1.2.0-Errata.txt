@@ -1,0 +1,3 @@
+Errata for DAPLule-LPC11U35-v1.2.0
+
+- The 3v3_IF net is also connected to the TAB of the LD1117S33 LDO regulator, thereby bypassing the switch. IN future revisions this needs to be changed, but for now a single track cut will sole the issue

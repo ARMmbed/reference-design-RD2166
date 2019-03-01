@@ -3,7 +3,7 @@
 <eagle version="9.3.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
@@ -31,10 +31,10 @@
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
@@ -47,10 +47,10 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
@@ -81,7 +81,7 @@
 <layer number="99" name="SpiceOrder" color="7" fill="1" visible="no" active="no"/>
 <layer number="100" name="NonViaHole" color="7" fill="1" visible="no" active="yes"/>
 <layer number="101" name="PlacementGuide" color="7" fill="1" visible="no" active="yes"/>
-<layer number="102" name="TopSilkscreen" color="7" fill="1" visible="no" active="yes"/>
+<layer number="102" name="TopSilkscreen" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="103" name="not_populated" color="7" fill="1" visible="no" active="yes"/>
 <layer number="104" name="BottomSilkscreen" color="7" fill="1" visible="no" active="yes"/>
 <layer number="105" name="tPlate" color="7" fill="1" visible="no" active="yes"/>
@@ -190,9 +190,9 @@ PA6
 PA5
 
 
+PB0
 PA0
-PA1
-PB0</text>
+PA1</text>
 <text x="76.5937" y="49.9745" size="1.016" layer="21" font="vector" ratio="12" distance="150" align="top-right">GND
 PA11
 PA12
@@ -217,7 +217,7 @@ PE2</text>
 
 STM32L
 
-v1.1.0</text>
+v1.2.0</text>
 <rectangle x1="39.37" y1="40.64" x2="63.5" y2="47.244" layer="21"/>
 </plain>
 <libraries>
@@ -403,14 +403,6 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 </package>
 </packages>
 </library>
-<library name="mbed-HDK">
-<packages>
-<package name="TP50-PTH">
-<pad name="TP" x="0" y="0" drill="1" shape="octagon"/>
-<text x="0.762" y="-0.508" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
-</package>
-</packages>
-</library>
 <library name="mbed-HDK-MF-ATMEL">
 <packages>
 <package name="SO8">
@@ -440,30 +432,7 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 </package>
 </packages>
 </library>
-<library name="testpad" urn="urn:adsk.eagle:library:385">
-<description>&lt;b&gt;Test Pins/Pads&lt;/b&gt;&lt;p&gt;
-Cream on SMD OFF.&lt;br&gt;
-new: Attribute TP_SIGNAL_NAME&lt;br&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="TP06R" urn="urn:adsk.eagle:footprint:27908/1" library_version="1">
-<description>&lt;b&gt;TEST PAD&lt;/b&gt;</description>
-<smd name="TP" x="0" y="0" dx="0.6" dy="0.6" layer="1" roundness="100" cream="no"/>
-<text x="-0.3" y="0.4001" size="1.27" layer="25">&gt;NAME</text>
-<text x="-0.254" y="-0.381" size="0.0254" layer="27">&gt;VALUE</text>
-<text x="0" y="-1.905" size="1" layer="37">&gt;TP_SIGNAL_NAME</text>
-</package>
-</packages>
-<packages3d>
-<package3d name="TP06R" urn="urn:adsk.eagle:package:27954/1" type="box" library_version="1">
-<description>TEST PAD</description>
-<packageinstances>
-<packageinstance name="TP06R"/>
-</packageinstances>
-</package3d>
-</packages3d>
-</library>
-<library name="STM32L475VGT6">
+<library name="SnapEDA">
 <packages>
 <package name="QFP50P1600X1600X160-100N">
 <wire x1="-7.1" y1="-7.1" x2="-7.1" y2="7.1" width="0.127" layer="51"/>
@@ -602,6 +571,21 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <smd name="98" x="-5" y="7.68" dx="1.56" dy="0.28" layer="1" roundness="50" rot="R270"/>
 <smd name="99" x="-5.5" y="7.68" dx="1.56" dy="0.28" layer="1" roundness="50" rot="R270"/>
 <smd name="100" x="-6" y="7.68" dx="1.56" dy="0.28" layer="1" roundness="50" rot="R270"/>
+</package>
+</packages>
+</library>
+<library name="mbed-HDK-Test">
+<packages>
+<package name="TP50-PTH">
+<pad name="TP" x="0" y="0" drill="1" shape="octagon"/>
+<text x="0.762" y="-0.508" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
+</package>
+<package name="TP06R">
+<description>&lt;b&gt;TEST PAD&lt;/b&gt;</description>
+<smd name="TP" x="0" y="0" dx="0.6" dy="0.6" layer="1" roundness="100" cream="no"/>
+<text x="-0.3" y="0.4001" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.254" y="-0.381" size="0.0254" layer="27">&gt;VALUE</text>
+<text x="0" y="-1.905" size="1" layer="37">&gt;TP_SIGNAL_NAME</text>
 </package>
 </packages>
 </library>
@@ -851,8 +835,8 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <attribute name="OC-NEWARK" value="2322071" x="-9.017" y="78.74" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="28.575" y="47.244" size="1.016" layer="27" font="vector" ratio="12" rot="R90"/>
 </element>
-<element name="TP1" library="mbed-HDK" package="TP50-PTH" value="TEST-POINT-50R-PTH" x="8.89" y="46.99" smashed="yes"/>
-<element name="TP2" library="mbed-HDK" package="TP50-PTH" value="TEST-POINT-50R-PTH" x="8.89" y="49.53" smashed="yes"/>
+<element name="TP1" library="mbed-HDK-Test" package="TP50-PTH" value="TEST_POINT-50R-PTH" x="8.89" y="46.99" smashed="yes"/>
+<element name="TP2" library="mbed-HDK-Test" package="TP50-PTH" value="TEST_POINT-50R-PTH" x="8.89" y="49.53" smashed="yes"/>
 <element name="CON2" library="mbed-HDK-Connector" package="TC2030-CTX-NL" value="TC2030-CTX-NL" x="17.526" y="48.133" smashed="yes" rot="R180">
 <attribute name="NAME" x="19.304" y="45.593" size="1.016" layer="25" font="vector" ratio="12" rot="R180"/>
 <attribute name="VALUE" x="20.701" y="46.228" size="1.016" layer="27" font="vector" ratio="12" rot="R180"/>
@@ -869,75 +853,75 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <attribute name="NAME" x="34.163" y="28.829" size="1.016" layer="25" font="vector" ratio="12"/>
 <attribute name="VALUE" x="31.75" y="25.527" size="1.016" layer="27" font="vector" ratio="12"/>
 </element>
-<element name="TP3" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="25.527" y="3.302" smashed="yes">
+<element name="TP3" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="25.527" y="3.302" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="25.527" y="1.397" size="1" layer="37"/>
 <attribute name="VALUE" x="25.273" y="2.921" size="0.0254" layer="27"/>
 </element>
-<element name="TP4" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="26.162" y="4.318" smashed="yes">
+<element name="TP4" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="26.162" y="4.318" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="26.162" y="2.413" size="1" layer="37"/>
 <attribute name="VALUE" x="25.908" y="3.937" size="0.0254" layer="27"/>
 </element>
-<element name="TP8" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="26.416" y="26.416" smashed="yes">
+<element name="TP8" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="26.416" y="26.416" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="26.416" y="24.511" size="1" layer="37"/>
 <attribute name="VALUE" x="26.162" y="26.035" size="0.0254" layer="27"/>
 </element>
-<element name="TP9" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="26.035" y="27.559" smashed="yes">
+<element name="TP9" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="26.035" y="27.559" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="26.035" y="25.654" size="1" layer="37"/>
 <attribute name="VALUE" x="25.781" y="27.178" size="0.0254" layer="27"/>
 </element>
-<element name="TP11" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="29.337" y="7.493" smashed="yes">
+<element name="TP11" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="29.337" y="7.493" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="29.337" y="5.588" size="1" layer="37"/>
 <attribute name="VALUE" x="29.083" y="7.112" size="0.0254" layer="27"/>
 </element>
-<element name="TP12" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="16.129" y="18.669" smashed="yes">
+<element name="TP12" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="16.129" y="18.669" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="16.129" y="16.764" size="1" layer="37"/>
 <attribute name="VALUE" x="15.875" y="18.288" size="0.0254" layer="27"/>
 </element>
-<element name="TP13" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="18.034" y="21.59" smashed="yes">
+<element name="TP13" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="18.034" y="21.59" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="18.034" y="19.685" size="1" layer="37"/>
 <attribute name="VALUE" x="17.78" y="21.209" size="0.0254" layer="27"/>
 </element>
-<element name="TP15" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="16.129" y="17.018" smashed="yes">
+<element name="TP15" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="16.129" y="17.018" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="16.129" y="15.113" size="1" layer="37"/>
 <attribute name="VALUE" x="15.875" y="16.637" size="0.0254" layer="27"/>
 </element>
-<element name="TP16" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="15.367" y="16.129" smashed="yes">
+<element name="TP16" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="15.367" y="16.129" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="15.367" y="14.224" size="1" layer="37"/>
 <attribute name="VALUE" x="15.113" y="15.748" size="0.0254" layer="27"/>
 </element>
-<element name="TP17" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="14.478" y="15.24" smashed="yes">
+<element name="TP17" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="14.478" y="15.24" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="14.478" y="13.335" size="1" layer="37"/>
 <attribute name="VALUE" x="14.224" y="14.859" size="0.0254" layer="27"/>
 </element>
-<element name="TP18" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="29.337" y="6.35" smashed="yes" rot="R270">
+<element name="TP18" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="29.337" y="6.35" smashed="yes" rot="R270">
 <attribute name="TP_SIGNAL_NAME" value="" x="27.432" y="6.35" size="1" layer="37" rot="R270"/>
 <attribute name="VALUE" x="28.956" y="6.604" size="0.0254" layer="27" rot="R270"/>
 </element>
-<element name="TP19" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="29.337" y="5.461" smashed="yes" rot="R270">
+<element name="TP19" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="29.337" y="5.461" smashed="yes" rot="R270">
 <attribute name="TP_SIGNAL_NAME" value="" x="27.432" y="5.461" size="1" layer="37" rot="R270"/>
 <attribute name="VALUE" x="28.956" y="5.715" size="0.0254" layer="27" rot="R270"/>
 </element>
-<element name="TP20" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="29.337" y="4.572" smashed="yes" rot="R270">
+<element name="TP20" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="29.337" y="4.572" smashed="yes" rot="R270">
 <attribute name="TP_SIGNAL_NAME" value="" x="27.432" y="4.572" size="1" layer="37" rot="R270"/>
 <attribute name="VALUE" x="28.956" y="4.826" size="0.0254" layer="27" rot="R270"/>
 </element>
-<element name="TP10" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="16.637" y="21.209" smashed="yes">
+<element name="TP10" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="16.637" y="21.209" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="16.637" y="19.304" size="1" layer="37"/>
 <attribute name="VALUE" x="16.383" y="20.828" size="0.0254" layer="27"/>
 </element>
-<element name="TP22" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="16.256" y="20.447" smashed="yes">
+<element name="TP22" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="16.256" y="20.447" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="16.256" y="18.542" size="1" layer="37"/>
 <attribute name="VALUE" x="16.002" y="20.066" size="0.0254" layer="27"/>
 </element>
-<element name="TP23" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="17.145" y="19.558" smashed="yes">
+<element name="TP23" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="17.145" y="19.558" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="17.145" y="17.653" size="1" layer="37"/>
 <attribute name="VALUE" x="16.891" y="19.177" size="0.0254" layer="27"/>
 </element>
-<element name="TP24" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="18.796" y="17.907" smashed="yes">
+<element name="TP24" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="18.796" y="17.907" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="18.796" y="16.002" size="1" layer="37"/>
 <attribute name="VALUE" x="18.542" y="17.526" size="0.0254" layer="27"/>
 </element>
-<element name="TP6" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="32.004" y="6.985" smashed="yes">
+<element name="TP6" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="32.004" y="6.985" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="32.004" y="5.08" size="1" layer="37"/>
 <attribute name="VALUE" x="31.75" y="6.604" size="0.0254" layer="27"/>
 </element>
@@ -958,109 +942,109 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <attribute name="NAME" x="72.009" y="22.352" size="1.016" layer="25" font="vector" ratio="12" rot="R180"/>
 <attribute name="VALUE" x="76.327" y="20.828" size="1.016" layer="27" font="vector" ratio="12" rot="R90"/>
 </element>
-<element name="TP14" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="43.942" y="8.382" smashed="yes">
+<element name="TP14" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="43.942" y="8.382" smashed="yes">
 <attribute name="NAME" x="44.658" y="8.2741" size="1.016" layer="25" font="vector" ratio="12"/>
 <attribute name="TP_SIGNAL_NAME" value="" x="43.942" y="6.477" size="1" layer="37"/>
 <attribute name="VALUE" x="43.688" y="8.001" size="0.0254" layer="27"/>
 </element>
-<element name="TP5" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="18.923" y="21.082" smashed="yes">
+<element name="TP5" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="18.923" y="21.082" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="18.923" y="19.177" size="1" layer="37"/>
 <attribute name="VALUE" x="18.669" y="20.701" size="0.0254" layer="27"/>
 </element>
-<element name="TP21" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="17.526" y="17.653" smashed="yes">
+<element name="TP21" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="17.526" y="17.653" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="17.526" y="15.748" size="1" layer="37"/>
 <attribute name="VALUE" x="17.272" y="17.272" size="0.0254" layer="27"/>
 </element>
-<element name="TP25" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="34.671" y="6.35" smashed="yes">
+<element name="TP25" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="34.671" y="6.35" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="34.671" y="4.445" size="1" layer="37"/>
 <attribute name="VALUE" x="34.417" y="5.969" size="0.0254" layer="27"/>
 </element>
-<element name="TP26" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="28.575" y="27.94" smashed="yes">
+<element name="TP26" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="28.575" y="27.94" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="28.575" y="26.035" size="1" layer="37"/>
 <attribute name="VALUE" x="28.321" y="27.559" size="0.0254" layer="27"/>
 </element>
-<element name="TP27" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="38.1" y="21.082" smashed="yes">
+<element name="TP27" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="38.1" y="21.082" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="38.1" y="19.177" size="1" layer="37"/>
 <attribute name="VALUE" x="37.846" y="20.701" size="0.0254" layer="27"/>
 </element>
-<element name="TP28" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="23.368" y="26.924" smashed="yes">
+<element name="TP28" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="23.368" y="26.924" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="23.368" y="25.019" size="1" layer="37"/>
 <attribute name="VALUE" x="23.114" y="26.543" size="0.0254" layer="27"/>
 </element>
-<element name="TP29" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="16.637" y="23.622" smashed="yes">
+<element name="TP29" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="16.637" y="23.622" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="16.637" y="21.717" size="1" layer="37"/>
 <attribute name="VALUE" x="16.383" y="23.241" size="0.0254" layer="27"/>
 </element>
-<element name="TP30" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="18.034" y="22.479" smashed="yes">
+<element name="TP30" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="18.034" y="22.479" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="18.034" y="20.574" size="1" layer="37"/>
 <attribute name="VALUE" x="17.78" y="22.098" size="0.0254" layer="27"/>
 </element>
-<element name="TP31" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="38.989" y="21.59" smashed="yes">
+<element name="TP31" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="38.989" y="21.59" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="38.989" y="19.685" size="1" layer="37"/>
 <attribute name="VALUE" x="38.735" y="21.209" size="0.0254" layer="27"/>
 </element>
-<element name="TP32" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="42.037" y="9.398" smashed="yes">
+<element name="TP32" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="42.037" y="9.398" smashed="yes">
 <attribute name="NAME" x="41.737" y="9.7981" size="1.016" layer="25" font="vector" ratio="12"/>
 <attribute name="TP_SIGNAL_NAME" value="" x="42.037" y="7.493" size="1" layer="37"/>
 <attribute name="VALUE" x="41.783" y="9.017" size="0.0254" layer="27"/>
 </element>
-<element name="TP34" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="29.464" y="28.702" smashed="yes">
+<element name="TP34" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="29.464" y="28.702" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="29.464" y="26.797" size="1" layer="37"/>
 <attribute name="VALUE" x="29.21" y="28.321" size="0.0254" layer="27"/>
 </element>
-<element name="TP35" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="31.75" y="28.067" smashed="yes">
+<element name="TP35" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="31.75" y="28.067" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="31.75" y="26.162" size="1" layer="37"/>
 <attribute name="VALUE" x="31.496" y="27.686" size="0.0254" layer="27"/>
 </element>
-<element name="TP36" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="23.495" y="29.083" smashed="yes">
+<element name="TP36" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="23.495" y="29.083" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="23.495" y="27.178" size="1" layer="37"/>
 <attribute name="VALUE" x="23.241" y="28.702" size="0.0254" layer="27"/>
 </element>
-<element name="TP41" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="23.241" y="4.445" smashed="yes">
+<element name="TP41" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="23.241" y="4.445" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="23.241" y="2.54" size="1" layer="37"/>
 <attribute name="VALUE" x="22.987" y="4.064" size="0.0254" layer="27"/>
 </element>
-<element name="TP42" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="23.876" y="3.429" smashed="yes">
+<element name="TP42" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="23.876" y="3.429" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="23.876" y="1.524" size="1" layer="37"/>
 <attribute name="VALUE" x="23.622" y="3.048" size="0.0254" layer="27"/>
 </element>
-<element name="TP43" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="21.082" y="4.064" smashed="yes">
+<element name="TP43" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="21.082" y="4.064" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="21.082" y="2.159" size="1" layer="37"/>
 <attribute name="VALUE" x="20.828" y="3.683" size="0.0254" layer="27"/>
 </element>
-<element name="TP44" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="32.639" y="28.067" smashed="yes">
+<element name="TP44" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="32.639" y="28.067" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="32.639" y="26.162" size="1" layer="37"/>
 <attribute name="VALUE" x="32.385" y="27.686" size="0.0254" layer="27"/>
 </element>
-<element name="TP37" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="22.352" y="6.35" smashed="yes">
+<element name="TP37" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="22.352" y="6.35" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="22.352" y="4.445" size="1" layer="37"/>
 <attribute name="VALUE" x="22.098" y="5.969" size="0.0254" layer="27"/>
 </element>
-<element name="U1" library="STM32L475VGT6" package="QFP50P1600X1600X160-100N" value="STM32L475VGT6" x="28.448" y="17.018" smashed="yes" rot="R180">
-<attribute name="NAME" x="34.948" y="8.218" size="1.27" layer="25" rot="R180"/>
+<element name="U1" library="SnapEDA" package="QFP50P1600X1600X160-100N" value="STM32L475VGT6" x="28.448" y="17.018" smashed="yes" rot="R180">
+<attribute name="NAME" x="38.504" y="9.615" size="1.016" layer="25" font="vector" ratio="12" rot="R180"/>
 <attribute name="VALUE" x="34.948" y="27.118" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="TP7" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="17.145" y="15.367" smashed="yes">
+<element name="TP7" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="17.145" y="15.367" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="17.145" y="13.462" size="1" layer="37"/>
 <attribute name="VALUE" x="16.891" y="14.986" size="0.0254" layer="27"/>
 </element>
-<element name="TP33" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="16.129" y="14.732" smashed="yes">
+<element name="TP33" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="16.129" y="14.732" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="16.129" y="12.827" size="1" layer="37"/>
 <attribute name="VALUE" x="15.875" y="14.351" size="0.0254" layer="27"/>
 </element>
-<element name="TP38" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="33.401" y="5.588" smashed="yes">
+<element name="TP38" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="33.401" y="5.588" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="33.401" y="3.683" size="1" layer="37"/>
 <attribute name="VALUE" x="33.147" y="5.207" size="0.0254" layer="27"/>
 </element>
-<element name="TP39" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="32.893" y="6.35" smashed="yes">
+<element name="TP39" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="32.893" y="6.35" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="32.893" y="4.445" size="1" layer="37"/>
 <attribute name="VALUE" x="32.639" y="5.969" size="0.0254" layer="27"/>
 </element>
-<element name="TP40" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="28.194" y="29.718" smashed="yes">
+<element name="TP40" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="28.194" y="29.718" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="28.194" y="27.813" size="1" layer="37"/>
 <attribute name="VALUE" x="27.94" y="29.337" size="0.0254" layer="27"/>
 </element>
-<element name="TP45" library="testpad" library_urn="urn:adsk.eagle:library:385" package="TP06R" package3d_urn="urn:adsk.eagle:package:27954/1" value="PTR1TP06R" x="28.321" y="26.67" smashed="yes">
+<element name="TP45" library="mbed-HDK-Test" package="TP06R" value="PTR1TP06R" x="28.321" y="26.67" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="28.321" y="24.765" size="1" layer="37"/>
 <attribute name="VALUE" x="28.067" y="26.289" size="0.0254" layer="27"/>
 </element>
@@ -1132,9 +1116,6 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <wire x1="12.319" y1="10.795" x2="9.839" y2="10.795" width="0.1524" layer="1"/>
 <wire x1="12.573" y1="11.049" x2="12.319" y2="10.795" width="0.1524" layer="1"/>
 <via x="12.573" y="11.049" extent="1-16" drill="0.254" shape="octagon"/>
-<wire x1="33.448" y1="28.368" x2="33.528" y2="28.448" width="0.1524" layer="1"/>
-<wire x1="33.528" y1="29.2862" x2="33.528" y2="28.448" width="0.1524" layer="1"/>
-<wire x1="33.528" y1="29.2862" x2="33.4772" y2="29.337" width="0.1524" layer="1"/>
 <via x="36.068" y="9.017" extent="1-16" drill="0.35" shape="octagon"/>
 <contactref element="R1" pad="2"/>
 <contactref element="R2" pad="2"/>
@@ -1490,10 +1471,10 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <contactref element="MOD1" pad="12"/>
 <wire x1="7.239" y1="17.272" x2="2.921" y2="21.59" width="0.1524" layer="16"/>
 <wire x1="2.921" y1="21.59" x2="1.27" y2="21.59" width="0.1524" layer="16"/>
-<wire x1="7.239" y1="17.272" x2="7.239" y2="6.223" width="0.1524" layer="16"/>
-<wire x1="10.795" y1="2.667" x2="7.239" y2="6.223" width="0.1524" layer="16"/>
+<wire x1="7.239" y1="17.272" x2="7.239" y2="3.683" width="0.1524" layer="16"/>
+<wire x1="8.255" y1="2.667" x2="7.239" y2="3.683" width="0.1524" layer="16"/>
 <wire x1="31.242" y1="2.794" x2="31.115" y2="2.667" width="0.1524" layer="16"/>
-<wire x1="31.115" y1="2.667" x2="10.795" y2="2.667" width="0.1524" layer="16"/>
+<wire x1="31.115" y1="2.667" x2="8.255" y2="2.667" width="0.1524" layer="16"/>
 <via x="31.242" y="2.794" extent="1-16" drill="0.254" shape="octagon"/>
 <contactref element="IC4" pad="6"/>
 <contactref element="R13" pad="1"/>
@@ -1509,10 +1490,10 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <signal name="PB7">
 <contactref element="MOD1" pad="11"/>
 <wire x1="7.62" y1="17.78" x2="1.27" y2="24.13" width="0.1524" layer="16"/>
-<wire x1="7.62" y1="17.78" x2="7.62" y2="6.35" width="0.1524" layer="16"/>
-<wire x1="10.795" y1="3.175" x2="7.62" y2="6.35" width="0.1524" layer="16"/>
+<wire x1="7.62" y1="17.78" x2="7.62" y2="3.937" width="0.1524" layer="16"/>
+<wire x1="8.382" y1="3.175" x2="7.62" y2="3.937" width="0.1524" layer="16"/>
 <wire x1="31.242" y1="3.81" x2="30.607" y2="3.175" width="0.1524" layer="16"/>
-<wire x1="30.607" y1="3.175" x2="10.795" y2="3.175" width="0.1524" layer="16"/>
+<wire x1="30.607" y1="3.175" x2="8.382" y2="3.175" width="0.1524" layer="16"/>
 <via x="31.242" y="3.81" extent="1-16" drill="0.254" shape="octagon"/>
 <contactref element="IC4" pad="5"/>
 <contactref element="R14" pad="1"/>
@@ -1559,15 +1540,15 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <wire x1="5.207" y1="16.12490625" x2="2.3733125" y2="19.05" width="0.1524" layer="16"/>
 <wire x1="2.3733125" y1="19.05" x2="1.27" y2="19.05" width="0.1524" layer="16"/>
 <wire x1="5.207" y1="16.12490625" x2="5.207" y2="12.954" width="0.1524" layer="16"/>
-<wire x1="5.207" y1="12.954" x2="5.207" y2="6.35" width="0.1524" layer="16"/>
-<wire x1="5.207" y1="6.35" x2="9.6278125" y2="2.032" width="0.1524" layer="16"/>
+<wire x1="5.207" y1="12.954" x2="5.207" y2="4.47158125" width="0.1524" layer="16"/>
+<wire x1="5.207" y1="4.47158125" x2="7.70466875" y2="2.032" width="0.1524" layer="16"/>
 <via x="28.321" y="2.032" extent="1-16" drill="0.254" shape="octagon"/>
 <contactref element="U2" pad="5"/>
 <wire x1="4.639" y1="12.887" x2="4.639" y2="12.065" width="0.1524" layer="1"/>
 <wire x1="4.639" y1="12.887" x2="4.572" y2="12.954" width="0.1524" layer="1"/>
 <via x="4.572" y="12.954" extent="1-16" drill="0.254" shape="octagon"/>
 <wire x1="5.207" y1="12.954" x2="4.572" y2="12.954" width="0.1524" layer="16"/>
-<wire x1="28.321" y1="2.032" x2="9.6278125" y2="2.032" width="0.1524" layer="16"/>
+<wire x1="28.321" y1="2.032" x2="7.70466875" y2="2.032" width="0.1524" layer="16"/>
 <wire x1="29.972" y1="3.683" x2="28.321" y2="2.032" width="0.1524" layer="1"/>
 <contactref element="U1" pad="91"/>
 <wire x1="29.948" y1="9.338" x2="29.948" y2="3.707" width="0.1524" layer="1"/>
@@ -1644,7 +1625,6 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <contactref element="U1" pad="15"/>
 <contactref element="R1" pad="1"/>
 <wire x1="37.83" y1="18.018" x2="43.8658" y2="24.0538" width="0.1524" layer="1"/>
-<wire x1="60.2488" y1="24.0538" x2="60.198" y2="24.003" width="0.1524" layer="1"/>
 <wire x1="43.8658" y1="24.0538" x2="60.2488" y2="24.0538" width="0.1524" layer="1"/>
 <wire x1="60.2488" y1="24.0538" x2="72.517" y2="24.0538" width="0.1524" layer="1"/>
 <wire x1="36.128" y1="18.018" x2="37.83" y2="18.018" width="0.1524" layer="1"/>
@@ -1762,14 +1742,15 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <signal name="PC10">
 <contactref element="MOD1" pad="17"/>
 <wire x1="23.448" y1="5.334" x2="21.082" y2="5.334" width="0.1524" layer="1"/>
-<wire x1="21.082" y1="5.334" x2="4.699" y2="5.334" width="0.1524" layer="1"/>
 <contactref element="TP43" pad="TP"/>
 <wire x1="23.448" y1="5.334" x2="23.448" y2="9.338" width="0.1524" layer="1"/>
-<wire x1="4.699" y1="5.334" x2="1.905" y2="8.128" width="0.1524" layer="1"/>
+<wire x1="1.905" y1="8.128" x2="4.318" y2="5.715" width="0.1524" layer="1"/>
 <wire x1="1.27" y1="8.89" x2="1.905" y2="8.255" width="0.1524" layer="1"/>
 <wire x1="1.905" y1="8.255" x2="1.905" y2="8.128" width="0.1524" layer="1"/>
 <contactref element="U1" pad="78"/>
 <wire x1="21.082" y1="4.064" x2="21.082" y2="5.334" width="0.1524" layer="1"/>
+<wire x1="20.701" y1="5.715" x2="21.082" y2="5.334" width="0.1524" layer="1"/>
+<wire x1="4.318" y1="5.715" x2="20.701" y2="5.715" width="0.1524" layer="1"/>
 </signal>
 <signal name="PE4">
 <contactref element="MOD1" pad="23"/>
@@ -1981,7 +1962,6 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <contactref element="R2" pad="1"/>
 <wire x1="40.767" y1="21.717" x2="40.767" y2="22.098" width="0.1524" layer="1"/>
 <wire x1="37.568" y1="18.518" x2="40.767" y2="21.717" width="0.1524" layer="1"/>
-<wire x1="43.8912" y1="21.6408" x2="43.8785" y2="21.6535" width="0.1524" layer="1"/>
 <via x="40.767" y="22.098" extent="1-16" drill="0.35" shape="octagon"/>
 <via x="43.434" y="22.098" extent="1-16" drill="0.35" shape="octagon"/>
 <wire x1="43.8785" y1="21.6535" x2="43.434" y2="22.098" width="0.1524" layer="1"/>
@@ -2114,14 +2094,8 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <wire x1="31.948" y1="9.338" x2="31.948" y2="10.485" width="0.1524" layer="1"/>
 </signal>
 <signal name="PB0">
-<contactref element="MOD1" pad="20"/>
-<wire x1="2.667" y1="1.016" x2="2.413" y2="1.27" width="0.1524" layer="1"/>
-<wire x1="1.27" y1="1.27" x2="2.413" y2="1.27" width="0.1524" layer="1"/>
-<wire x1="12.192" y1="1.016" x2="15.494" y2="4.318" width="0.1524" layer="1"/>
-<wire x1="2.667" y1="1.016" x2="12.192" y2="1.016" width="0.1524" layer="1"/>
-<via x="15.494" y="4.318" extent="1-16" drill="0.35" shape="octagon"/>
-<wire x1="14.859" y1="6.477" x2="14.859" y2="4.953" width="0.1524" layer="16"/>
-<wire x1="15.494" y1="4.318" x2="14.859" y2="4.953" width="0.1524" layer="16"/>
+<via x="14.859" y="4.318" extent="1-16" drill="0.35" shape="octagon"/>
+<wire x1="14.859" y1="6.477" x2="14.859" y2="4.318" width="0.1524" layer="16"/>
 <via x="14.859" y="6.477" extent="1-16" drill="0.35" shape="octagon"/>
 <wire x1="14.859" y1="6.477" x2="15.875" y2="7.493" width="0.1524" layer="1"/>
 <wire x1="19.304" y1="7.493" x2="19.558" y2="7.747" width="0.1524" layer="1"/>
@@ -2141,6 +2115,11 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <wire x1="29.948" y1="23.495" x2="29.44" y2="22.987" width="0.1524" layer="1"/>
 <contactref element="U1" pad="35"/>
 <wire x1="29.948" y1="24.698" x2="29.948" y2="23.495" width="0.1524" layer="1"/>
+<contactref element="MOD1" pad="18"/>
+<wire x1="1.27" y1="6.35" x2="1.34694375" y2="6.35" width="0.1524" layer="1"/>
+<wire x1="1.34694375" y1="6.35" x2="2.54074375" y2="5.1562" width="0.1524" layer="1"/>
+<wire x1="14.0208" y1="5.1562" x2="14.859" y2="4.318" width="0.1524" layer="1"/>
+<wire x1="2.54074375" y1="5.1562" x2="14.0208" y2="5.1562" width="0.1524" layer="1"/>
 </signal>
 <signal name="N$22">
 <contactref element="TP34" pad="TP"/>
@@ -2162,15 +2141,10 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <wire x1="31.75" y1="26.797" x2="31.75" y2="28.067" width="0.1524" layer="1"/>
 </signal>
 <signal name="PA1">
-<contactref element="MOD1" pad="19"/>
-<wire x1="13.335" y1="4.191" x2="11.43" y2="2.286" width="0.1524" layer="1"/>
-<wire x1="11.43" y1="2.286" x2="4.191" y2="2.286" width="0.1524" layer="1"/>
-<wire x1="4.191" y1="2.286" x2="2.667" y2="3.81" width="0.1524" layer="1"/>
-<wire x1="2.667" y1="3.81" x2="1.27" y2="3.81" width="0.1524" layer="1"/>
-<via x="13.335" y="4.191" extent="1-16" drill="0.35" shape="octagon"/>
+<via x="13.208" y="4.318" extent="1-16" drill="0.35" shape="octagon"/>
 <wire x1="13.462" y1="6.985" x2="13.462" y2="7.112" width="0.1524" layer="16"/>
-<wire x1="13.462" y1="6.985" x2="13.335" y2="6.858" width="0.1524" layer="16"/>
-<wire x1="13.335" y1="6.858" x2="13.335" y2="4.191" width="0.1524" layer="16"/>
+<wire x1="13.462" y1="6.985" x2="13.208" y2="6.731" width="0.1524" layer="16"/>
+<wire x1="13.208" y1="6.731" x2="13.208" y2="4.318" width="0.1524" layer="16"/>
 <via x="13.462" y="7.112" extent="1-16" drill="0.35" shape="octagon"/>
 <wire x1="13.462" y1="7.112" x2="14.732" y2="8.382" width="0.1524" layer="1"/>
 <wire x1="20.574" y1="7.747" x2="19.939" y2="8.382" width="0.1524" layer="1"/>
@@ -2182,12 +2156,11 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <wire x1="30.861" y1="18.034" x2="20.574" y2="7.747" width="0.1524" layer="16"/>
 <contactref element="U1" pad="24"/>
 <wire x1="36.128" y1="22.518" x2="34.837" y2="22.518" width="0.1524" layer="1"/>
+<contactref element="MOD1" pad="20"/>
+<wire x1="1.27" y1="1.27" x2="10.16" y2="1.27" width="0.1524" layer="1"/>
+<wire x1="10.16" y1="1.27" x2="13.208" y2="4.318" width="0.1524" layer="1"/>
 </signal>
 <signal name="PA0">
-<contactref element="MOD1" pad="18"/>
-<wire x1="1.27" y1="6.35" x2="2.413" y2="6.35" width="0.1524" layer="1"/>
-<wire x1="4.445" y1="4.318" x2="11.557" y2="4.318" width="0.1524" layer="1"/>
-<wire x1="2.413" y1="6.35" x2="4.445" y2="4.318" width="0.1524" layer="1"/>
 <via x="11.557" y="4.318" extent="1-16" drill="0.35" shape="octagon"/>
 <wire x1="11.557" y1="6.477" x2="11.811" y2="6.731" width="0.1524" layer="16"/>
 <wire x1="11.557" y1="6.477" x2="11.557" y2="4.318" width="0.1524" layer="16"/>
@@ -2203,6 +2176,9 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <contactref element="U1" pad="23"/>
 <wire x1="36.128" y1="22.018" x2="34.845" y2="22.018" width="0.1524" layer="1"/>
 <wire x1="34.845" y1="22.018" x2="33.147" y2="20.32" width="0.1524" layer="1"/>
+<contactref element="MOD1" pad="19"/>
+<wire x1="1.27" y1="3.81" x2="11.049" y2="3.81" width="0.1524" layer="1"/>
+<wire x1="11.049" y1="3.81" x2="11.557" y2="4.318" width="0.1524" layer="1"/>
 </signal>
 <signal name="PA4">
 <contactref element="TP44" pad="TP"/>
@@ -2290,12 +2266,11 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 </mfgpreviewcolors>
 <errors>
 <approved hash="6,1,20908dc7c6163d3b"/>
-<approved hash="6,1,aaa9d7f29fae2a4d"/>
-<approved hash="6,1,f1ecf1947264721c"/>
 <approved hash="6,1,fc2167685850e9e9"/>
-<approved hash="6,1,58c645085d33f08d"/>
 <approved hash="6,1,085f3b23c8ebd568"/>
 <approved hash="6,1,5025ffec2a634c9e"/>
+<approved hash="6,1,eef94803ca99dcfd"/>
+<approved hash="6,1,1086c151411aba3d"/>
 </errors>
 </board>
 </drawing>
@@ -2303,21 +2278,6 @@ Allgemeine dseign Regeln, die die meisten Anwendungen passen. Bitte überprüfen
 <note version="6.3" minversion="6.2.2" severity="warning">
 Since Version 6.2.2 text objects can contain more than one line,
 which will not be processed correctly with this version.
-</note>
-<note version="8.2" severity="warning">
-Since Version 8.2, EAGLE supports online libraries. The ids
-of those online libraries will not be understood (or retained)
-with this version.
-</note>
-<note version="8.3" severity="warning">
-Since Version 8.3, EAGLE supports URNs for individual library
-assets (packages, symbols, and devices). The URNs of those assets
-will not be understood (or retained) with this version.
-</note>
-<note version="8.3" severity="warning">
-Since Version 8.3, EAGLE supports the association of 3D packages
-with devices in libraries, schematics, and board files. Those 3D
-packages will not be understood (or retained) with this version.
 </note>
 </compatibility>
 </eagle>
